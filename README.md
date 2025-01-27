@@ -2,7 +2,7 @@
 
 ## Projet de Détection de Fake News
 
-**Equipe**: Mohamed Boumrar, Fred Mendes, Yannick Howaton
+**Equipe**: Mohamed Boumrar, Frédéric Mendes, Yannick Howaton
 
 **Contexte**:  
 Dans le cadre de notre projet, nous avons développé un modèle de détection de fake news en utilisant la méthode TF-IDF combinée à une régression logistique. Ce projet a pour objectif d'analyser et de classifier des articles de presse en fonction de leur véracité, en se basant sur un ensemble de données étiqueté.
