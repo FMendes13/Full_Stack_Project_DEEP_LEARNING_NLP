@@ -1,0 +1,3 @@
+[submodule "Modèle_BERT_entrainé_1"]
+	path = Modèle_BERT_entrainé_1
+	url = https://github.com/FMendes13/Full_Stack_Project_DEEP_LEARNING_NLP
