@@ -1,4 +1,6 @@
-Fake News Detection - Synthèse des Expériences avec Différents Modèles
+Fake News Detection 
+Synthèse des Expériences avec Différents Modèles
+
 🌟 Projet de Détection de Fake News
 💪 Équipe : Mohamed Boumrar, Fred Mendes, Yannick Howaton
 
