@@ -71,9 +71,8 @@ Synthèse :
 - TF-IDF + Régression Logistique (Ponctuation) est rapide et efficace.
 - TF-IDF + Logistic Regression (SMOTE) est performant et bien équilibré.
 
-🛠️ Installation et Utilisation
-1. Voir le projet sur le lien suivant : https://github.com/FMendes13/Full_Stack_Project_DEEP_LEARNING_NLP
-2. Charger le modèle et prédire un article :
+🛠️ Installation et Utilisation:
+Chargez le modèle et prédire un article :
 ```python
 import pickle
 with open('logistic_regression_model_smote.pkl', 'rb') as model_file:
