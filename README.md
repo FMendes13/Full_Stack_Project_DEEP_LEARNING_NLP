@@ -1,69 +1,90 @@
-# Fake News Detection with TF-IDF and Logistic Regression
+Fake News Detection - Synthèse des Expériences avec Différents Modèles
+🌟 Projet de Détection de Fake News
+💪 Équipe : Mohamed Boumrar, Fred Mendes, Yannick Howaton
 
-## Projet de Détection de Fake News
+🌐 Contexte
+Dans le cadre de ce projet, nous avons exploré plusieurs approches pour détecter les fake news à partir de données textuelles. Nous avons testé différentes techniques et architectures afin de comparer leur efficacité et optimiser les performances de classification.
 
-**Equipe**: Mohamed Boumrar, Fred Mendes, Yannick Howaton
+🎯 Objectif
+L'objectif global était de développer plusieurs modèles capables de détecter les fake news et d'analyser leurs performances respectives. Nous avons exploré trois approches principales :
+1. TF-IDF + Régression Logistique avec Ponctuation : Amélioration de la vectorisation TF-IDF en conservant la ponctuation pour de meilleures performances.
+2. BERT : Utilisation de BERT (Bidirectional Encoder Representations from Transformers) pour une meilleure compréhension du contexte global.
+3. TF-IDF + Régression Logistique avec SMOTE : Approche basée sur la vectorisation TF-IDF et une régression logistique pour la classification.
 
-**Contexte**:  
-Dans le cadre de notre projet, nous avons développé un modèle de détection de fake news en utilisant la méthode TF-IDF combinée à une régression logistique. Ce projet a pour objectif d'analyser et de classifier des articles de presse en fonction de leur véracité, en se basant sur un ensemble de données étiqueté.
+________________________________________
 
-## Objectifs
+📝 Modélisation et Expériences
 
-L'objectif principal est de créer un modèle performant capable de distinguer les fake news des articles réels à partir de données textuelles. Nous avons utilisé un ensemble de données avec des articles étiquetés comme étant "vrai" ou "faux". Ce projet implique des étapes d'exploration, de prétraitement des données, d'entraînement de modèles, et d'évaluation de leur performance.
+💡 1. TF-IDF + Régression Logistique avec Ponctuation
+Pourquoi cette approche ?
+- L'inclusion de la ponctuation permet de capturer davantage de nuances dans le texte.
+- TF-IDF permet d'extraire efficacement les caractéristiques textuelles.
+- Régression logistique pour une classification rapide et performante.
 
-## Installation
+Problèmes et solutions :
+- Sensibilité à la qualité des textes → Prétraitement avancé et nettoyage optimisé.
 
- 1. Clonez le dépôt :  
-   ```bash
-   git clone https://github.com/Boumrarmohamed/fake_news_tfidf.git
+📊 Résultats :
+- Accuracy : 91%
+- F1-score : 90% / 92%
+- Bon compromis entre rapidité et précision.
 
+________________________________________
 
-## Description du Projet
-# Prétraitement des Données
-Les étapes de prétraitement ont été réalisées avec la bibliothèque pandas pour nettoyer et structurer les données avant de les utiliser pour l'entraînement du modèle. Cela inclut :
+🔍 2. BERT pour la détection de fake news
+Pourquoi BERT ?
+BERT est un modèle de transformer bidirectionnel pré-entraidné, extrêmement puissant pour le NLP.
 
-Le nettoyage des données textuelles
-La suppression des doublons
-Le traitement des valeurs manquantes
-Le filtrage des stop words (mots vides) grâce à un fichier stop_words.txt
+Difficultés et solutions :
+- Ressources lourdes → Utilisation de DistilBERT pour réduire la complexité.
 
-# Modélisation
-Nous avons utilisé la méthode TF-IDF pour vectoriser les textes et la régression logistique comme modèle de classification. Le modèle a été entraîné sur les données d'entraînement, et la performance a été évaluée à l'aide de la précision, du rappel, du score F1, et de la matrice de confusion.
+📊 Résultats :
+- Accuracy : 90% sur les données de test.
+- Meilleures performances mais fortement coûteux.
 
-# Techniques avancées
-SMOTE (Synthetic Minority Over-sampling Technique) a été appliqué pour résoudre le problème de déséquilibre des classes.
-Une recherche de grille (GridSearch) a été effectuée pour optimiser les hyperparamètres du modèle.
+________________________________________
 
-# Évaluation
-Les performances du modèle ont été mesurées avec les métriques suivantes :
+🌟 3. TF-IDF + Régression Logistique avec SMOTE
+Pourquoi cette approche ?
+- TF-IDF pour extraire les caractéristiques textuelles.
+- Régression logistique comme modèle simple et efficace.
+- SMOTE pour corriger le déséquilibre des classes.
 
-Précision: 0.96
-Rappel: 0.96
-F1-score: 0.96
-Accuracy: 95.8%
-Une matrice de confusion a été générée pour visualiser les résultats et analyser les faux positifs et faux négatifs.
+Problèmes et solutions :
+- Déséquilibre des classes → Utilisation de SMOTE.
 
-## Fichiers du Projet
-logistic_regression_model_smote.pkl : modèle entraîné avec SMOTE
-matrice.png : image de la matrice de confusion
-output.png : graphique des résultats d'évaluation
-stop_words.txt : fichier contenant les mots vides (stop words) utilisés pour le prétraitement
+📊 Résultats :
+- Accuracy : 95.81%
+- F1-score : 95.75%
+- Approche équilibrée entre performance et complexité.
 
-## Utilisation
-Pour utiliser le modèle, il suffit de charger le fichier logistic_regression_model_smote.pkl et d'utiliser la méthode predict pour classifier de nouveaux articles.
+________________________________________
 
-Exemple :
+📈 Conclusion Générale
 
+| Modèle | Accuracy | Points forts | Limitations |
+|---------|---------|--------------|--------------|
+| TF-IDF + Régression Logistique (Ponctuation) | 91% | Bon compromis entre rapidité et précision | Sensible à la qualité des données |
+| BERT | 90% | Précision très élevée | Exigeant en ressources |
+| TF-IDF + Logistic Regression (SMOTE) | 95.81% | Bonne performance et gestion des classes | Moins adapté aux contextes complexes |
 
+Synthèse :
+- BERT est le plus précis mais très coûteux.
+- TF-IDF + Régression Logistique (Ponctuation) est rapide et efficace.
+- TF-IDF + Logistic Regression (SMOTE) est performant et bien équilibré.
+
+👨‍💼 Contribution
+Ce projet a été réalisé par Mohamed Boumrar, Fred Mendes et Yannick Howaton. Chaque modèle a été testé et optimisé en équipe pour assurer des performances solides.
+
+🛠️ Installation et Utilisation
+1. Voir le projet sur le lien suivant : https://github.com/FMendes13/Full_Stack_Project_DEEP_LEARNING_NLP
+2. Charger le modèle et prédire un article :
+```python
 import pickle
-
-# Charger le modèle
 with open('logistic_regression_model_smote.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
-
-# Prédire avec un article
 prediction = model.predict([article_text])
+```
+________________________________________
 
-
-## Contributions
-Ce projet a été réalisé en collaboration avec mes collègues Fred Mendes et Yannick Howaton. Chaque étape de développement a été partagée, testée et améliorée en équipe pour garantir la qualité et la robustesse du modèle.
+📁 Ce README fournit une vue d'ensemble claire et structurée du projet, mettant en valeur l'expérimentation et la comparaison des modèles.
