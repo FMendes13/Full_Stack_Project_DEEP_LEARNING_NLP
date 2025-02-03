@@ -164,18 +164,18 @@ if st.session_state.prediction is not None:
             if st.session_state.prediction.size > 0:
                 if (st.session_state.prediction == 0).any():
                     st.markdown('<p class="fake-news">🚨 **Fake News Detected** 🚨</p>', unsafe_allow_html=True)
-                    st.image(FAKE_NEWS_GIF, use_container_width=True)
+                    st.image(FAKE_NEWS_GIF)
                 else:
                     st.markdown('<p class="real-news">✔️ **This seems legit** ✔️ - yet do not hesitate to verify the sources</p>', unsafe_allow_html=True)
-                    st.image(REAL_NEWS_GIF, use_container_width=True)
+                    st.image(REAL_NEWS_GIF)
 
             # Affichage des probabilités si l'utilisateur le souhaite
             if st.session_state.show_probability:
                 max_prob = max(st.session_state.prediction_proba[0])
                 if max_prob == st.session_state.prediction_proba[0][0]:
-                    st.subheader(f'Fake News Probability: {max_prob * 100:.2f}%')
+                    st.subheader(f'Probability: {max_prob * 100:.2f}%')
                 else:
-                    st.subheader(f'Real News Probability: {max_prob * 100:.2f}%')
+                    st.subheader(f'Probability: {max_prob * 100:.2f}%')
 
 # Footer avec le lien GitHub
 st.markdown("---")

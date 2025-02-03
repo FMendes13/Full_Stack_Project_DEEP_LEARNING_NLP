@@ -13,6 +13,10 @@ TF-IDF + Régression Logistique avec et sans Ponctuation : Amélioration de la v
 3. TF-IDF + Régression Logistique avec SMOTE : Approche basée sur la vectorisation TF-IDF et une régression logistique pour la classification.
 2. BERT : Utilisation de BERT (Bidirectional Encoder Representations from Transformers) pour une meilleure compréhension du contexte global.
 
+🤖 Tracking & Deploiement via Hugging Face
+1. MLflow - https://fmendes13-fake-news-detector.hf.space
+2. App - https://huggingface.co/spaces/FMendes13/Fake-News-Detector-app
+
 ________________________________________
 
 📝 Modélisation et Expériences
